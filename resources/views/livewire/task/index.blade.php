@@ -1,4 +1,5 @@
 <x-slot:title>Taks</x-slot:title>
+
 <div class="mx-4 md:mx-20 mt-6">
     <h1 class="text-xl md:text-2xl font-bold text-slate-800 {{ $showAddTaskModal || $showDeleteTaskModal ? 'opacity-50' : '' }}">
         Batas waktu: <span class="text-yellow-600">{{ $todolist->due_date }}</span>
@@ -65,7 +66,7 @@
 
             <div class="md:hidden mt-4 space-y-4">
                 @foreach ($tasks as $task)
-                    <div class="bg-[#E3DAF7] border border-gray-300 p-4 rounded-lg shadow-md">
+                    <div class="bg-white border border-gray-300 p-4 rounded-lg shadow-md">
                         <p class="text-gray-900 font-semibold">{{ $task->description }}</p>
 
                         <div class="mt-2 space-y-2">
@@ -83,7 +84,8 @@
                             <div>
                                 <label class="block text-sm font-medium">Status</label>
                                 <select wire:change="updateStatus({{ $task->id }}, $event.target.value)"
-                                    class="w-full mt-1 px-3 py-1 text-sm rounded-md border border-gray-300 bg-white text-gray-800 {{ $task->status == 'pending' ? 'bg-yellow-500' :
+                                    class="w-full mt-1 px-3 py-1 text-sm rounded-md border border-gray-300 text-white
+                                    {{ $task->status == 'pending' ? 'bg-yellow-500' :
                                        ($task->status == 'in_progress' ? 'bg-blue-500' : 'bg-green-500') }}">
                                     <option value="pending" {{ $task->status == 'pending' ? 'selected' : '' }}>Pending</option>
                                     <option value="in_progress" {{ $task->status == 'in_progress' ? 'selected' : '' }}>In Progress</option>

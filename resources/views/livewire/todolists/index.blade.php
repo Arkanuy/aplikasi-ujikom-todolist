@@ -65,8 +65,8 @@
                             <h5 class="text-lg font-semibold text-gray-900">{{ $todolist->title }}</h5>
                             <p class="text-sm text-gray-600">Status:
                                 <span
-                                    class="px-2 rounded-md text-sm font-medium
-                                    {{ $todolist->status == 'Done' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-white' }}">
+                                    class="px-2 rounded-md text-sm font-medium capitalize
+                                    {{ $todolist->status == 'completed' ? 'bg-green-500 text-white' : 'bg-yellow-500 text-white' }}">
                                     {{ $todolist->status }}
                                 </span>
                             </p>
